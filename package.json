@@ -1,23 +1,16 @@
 {
-  "name": "readmegenerator",
+  "name": "static-site",
   "version": "1.0.0",
-  "description": "a readme generator using node and npm",
-  "main": "script.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nrlong/READMEGenerator.git"
-  },
-  "author": "Nathan Long",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/nrlong/READMEGenerator/issues"
-  },
-  "homepage": "https://github.com/nrlong/READMEGenerator#readme",
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.2",
-    "inquirer": "^7.1.0"
+    "axios": "^0.19.0",
+    "dotenv": "^8.0.0",
+    "inquirer": "^6.3.1"
   }
 }
