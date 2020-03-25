@@ -6,10 +6,11 @@ const generateMarkdown = ("./utils/generateMarkdown.js");
 
 console.log("We will be making a read me.  Please answer the following questions...")
 
-const questions = [{
+const questions = [
+    {
         type: "input",
         message: "What is your GitHub UserName?",
-        name: "name"
+        name: "username"
     },{
         type: "input",
         message: "What is your project's title?",
@@ -43,21 +44,41 @@ const questions = [{
         name: "questions"
     }
 
-]
+];
+
+async function writeToFile(fileName, data){
+    await writeFileAsync(fileName, data, function(error){
+        if(error){
+            return console.log(error)
+        }
+
+        console.log("Success!!!");
+    })
+}
 
 function init(){
     inquirer
 
     .prompt(questions)
 
-    .then(inquireResponse => {
-        console.log("Please stand by...");
+    .then(async function gatherInformation(answers){
+        try{
 
-        api.getUser(inquireResponse.github).then(({ data }) => {
-            writeToFile("README.md", generateMarkdown({...inquireResponse, ...data})
-            );
-        });
+            // console.log(answers)
+            const userData = await api.getUser(answers.username);
+            // console.log(userData.data.data.user);
+            const data = Object.assign({}, answers, userData.data.data.user);
+
+            // console.log(data);
+            const markStr = generateMarkdown.generateMarkdown(data);
+
+            writeToFile("README.md", markStr);
+
+        }catch(err){
+            console.log(err);
+        }
     });
+        
 }
 
 init();
