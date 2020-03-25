@@ -1,12 +1,12 @@
-const axios = require("axios");
 const fs = require("fs");
 const inquirer = require("inquirer");
 
-console.log("We will be making a read me.  Please answer the following questions...")
-const questions;
+const api = require("./utils/api.js");
+const generateMarkdown = ("./utils/generateMarkdown.js");
 
-inquirer
-    .prompt([{
+console.log("We will be making a read me.  Please answer the following questions...")
+
+const questions = [{
         type: "input",
         message: "What is your GitHub UserName?",
         name: "name"
@@ -43,4 +43,21 @@ inquirer
         name: "questions"
     }
 
-])
+]
+
+function init(){
+    inquirer
+
+    .prompt(questions)
+
+    .then(inquireResponse => {
+        console.log("Please stand by...");
+
+        api.getUser(inquireResponse.github).then(({ data }) => {
+            writeToFile("README.md", generateMarkdown({...inquireResponse, ...data})
+            );
+        });
+    });
+}
+
+init();
