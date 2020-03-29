@@ -28,19 +28,23 @@ const questions = [
     },{
         type: "input",
         message: "Any information about the projects usage?",
-        name: "usage"
+        name: "useage"
     },{
         type: "list",
-        choices: ["None", "Apache License 2.0", "GNU General Pubic License v3.0", "MIT License", "Mozilla Public License 2.0"],
+        choices: [
+            "None", 
+            "Apache License 2.0", 
+            "GNU General Pubic License v3.0", 
+            "MIT License", 
+            "Mozilla Public License 2.0"
+    ],
         message: "Would you like to add a license?  Please select an option.",
         name: "license"
     }, {
         type: "input",
-        messages: "Would you like to list any contributors?",
+        message: "Would you like to list any contributors?",
         name: "contributors"
     }, {
-
-    } , {
         type: "input",
         message: "Any testing information?",
         name: "testing"
@@ -67,7 +71,7 @@ function init(){
 
     .prompt(questions)
 
-    .then(async function gatherInformation(answers){
+    .then(async function (answers){
         try{
 
             // console.log(answers)
