@@ -3,6 +3,8 @@ const inquirer = require("inquirer");
 
 const api = require("./utils/api.js");
 const generateMarkdown = ("./utils/generateMarkdown.js");
+const util = require("util");
+const writeFileAsync = util.promisify(fs.writeFile);
 
 console.log("We will be making a read me.  Please answer the following questions...")
 
@@ -17,6 +19,10 @@ const questions = [
         name: "title"
     },{
         type: "input",
+        message: "Please describe the project.",
+        name: "description"
+    },{
+        type: "input",
         message: "Installation instructions?",
         name: "install"
     },{
@@ -26,7 +32,7 @@ const questions = [
     },{
         type: "list",
         choices: ["None", "Apache License 2.0", "GNU General Pubic License v3.0", "MIT License", "Mozilla Public License 2.0"],
-        message: "Would you like to add a license?  Please select and option.",
+        message: "Would you like to add a license?  Please select an option.",
         name: "license"
     }, {
         type: "input",
@@ -70,12 +76,12 @@ function init(){
             const data = Object.assign({}, answers, userData.data.data.user);
 
             // console.log(data);
-            const markStr = generateMarkdown.generateMarkdown(data);
+            const markdownGenerate = generateMarkdown.generateMarkdown(data);
 
-            writeToFile("README.md", markStr);
+            writeToFile("README.md", markdownGenerate);
 
-        }catch(err){
-            console.log(err);
+        }catch(error){
+            console.log(error);
         }
     });
         
