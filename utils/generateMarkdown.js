@@ -14,6 +14,7 @@ ${response.description}
 * [License](#License)
 * [Contributors](#Contributors)
 * [Tests](#Tests)
+* [Questions](#Questions)
 * [Email](#Email)
 
 ## Installation
