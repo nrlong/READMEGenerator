@@ -49,6 +49,10 @@ const questions = [
         type: "input",
         message: "What is your email address?",
         name: "email"
+    }, {
+        type: "input",
+        message: "Any additional Questions?",
+        name: "questions"
     }
 
 ];
@@ -64,7 +68,7 @@ function init(){
     
         axios.get(url).then(function(data){
           let followers = data.data.followers;
-          let location = data.location;
+          let location = data.data.location;
           let bioImg = data.data.avatar_url;
           let readmeFile = generateMarkdown(answers, followers, location, bioImg)
           fs.writeFile("README.md", readmeFile, function(error){

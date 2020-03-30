@@ -1,11 +1,8 @@
 # README Generator
 
-![followers](https://img.shields.io/badge/Followers-10-brightgreen)
-![location](https://img.shields.io/badges/Location-undefined-blue)
-
 ## Description
 
-Project made using node.  With npm packages inquirer and axios
+a read me generator using node and npm packages inquirer and axios
 
 
 ## Table of Contents
@@ -16,35 +13,38 @@ Project made using node.  With npm packages inquirer and axios
 * [License](##License)
 * [Contributors](##Contributors)
 * [Tests](##Tests)
-* [Questions](##Questions)
+* [Email](##Email)
 
-##Installation
+## Installation
 
-npm install
+    npm install
 
-##Useage
+## Useage
 
-none
+    none
 
-##License
+## License
 
-MIT License
+    MIT License
 
-##Contributors
+## Contributors
 
-none
+    none
 
-##Tests
+## Tests
 
-none
+    noen
 
-##Questions
+## Questions
 
-undefined
+    none
 
 ## Email
-nrlong13@gmail.com;
 
-![bioImage] (https://avatars2.githubusercontent.com/u/59449041?v=4)
+    nrlong13@gmail.com;
+
+![bioImage](https://avatars2.githubusercontent.com/u/59449041?v=4&s=200)
 
 
+![followers](https://img.shields.io/badge/Followers-10-brightgreen)
+![location](https://img.shields.io/badge/Location-Maryland-blue)

@@ -1,11 +1,5 @@
-const fs = require("fs");
-
-
-const readmeGenerate = (response, followers, location, bioImage) => {
+const readmeGenerate = (response, followers, location,  bioImage) => {
   return `# ${response.title}
-
-![followers](https://img.shields.io/badge/Followers-${followers}-brightgreen)
-![location](https://img.shields.io/badges/Location-${location}-blue)
 
 ## Description
 
@@ -20,38 +14,41 @@ ${response.description}
 * [License](##License)
 * [Contributors](##Contributors)
 * [Tests](##Tests)
-* [Questions](##Questions)
+* [Email](##Email)
 
-##Installation
+## Installation
 
-${response.install}
+    ${response.install}
 
-##Useage
+## Useage
 
-${response.useage}
+    ${response.useage}
 
-##License
+## License
 
-${response.license}
+    ${response.license}
 
-##Contributors
+## Contributors
 
-${response.contributors}
+    ${response.contributors}
 
-##Tests
+## Tests
 
-${response.testing}
+    ${response.testing}
 
-##Questions
+## Questions
 
-${response.questions}
+    ${response.questions}
 
 ## Email
-${response.email};
 
-![bioImage] (${bioImage})
+    ${response.email};
+
+![bioImage](${bioImage}&s=200)
 
 
+![followers](https://img.shields.io/badge/Followers-${followers}-brightgreen)
+![location](https://img.shields.io/badge/Location-${location}-blue)
 `;
 }
 
