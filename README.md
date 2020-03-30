@@ -2,7 +2,7 @@
 
 ## Description
 
-a read me generator using node and npm packages inquirer and axios
+a readme generator using node and npm packages inquirer and axios
 
 
 ## Table of Contents
@@ -13,6 +13,7 @@ a read me generator using node and npm packages inquirer and axios
 * [License](#License)
 * [Contributors](#Contributors)
 * [Tests](#Tests)
+* [Questions](#Questions)
 * [Email](#Email)
 
 ## Installation
@@ -21,7 +22,7 @@ a read me generator using node and npm packages inquirer and axios
 
 ## Useage
 
-    none
+    used to build consistent readme files for future or current projects
 
 ## License
 
@@ -33,7 +34,7 @@ a read me generator using node and npm packages inquirer and axios
 
 ## Tests
 
-    noen
+    none
 
 ## Questions
 
@@ -41,7 +42,7 @@ a read me generator using node and npm packages inquirer and axios
 
 ## Email
 
-    nrlong13@gmail.com;
+    nrlong13@gmail.com
 
 ![bioImage](https://avatars2.githubusercontent.com/u/59449041?v=4&s=200)
 
