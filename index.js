@@ -1,10 +1,7 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
-
-const api = require("./utils/api.js");
-const generateMarkdown = ("./utils/generateMarkdown.js");
-const util = require("util");
-const writeFileAsync = util.promisify(fs.writeFile);
+const axios = require("axios")
+const generateMarkdown = require("./utils/generateMarkdown.js");
 
 console.log("We will be making a read me.  Please answer the following questions...")
 
@@ -50,45 +47,34 @@ const questions = [
         name: "testing"
     }, {
         type: "input",
-        message: "Questions?",
-        name: "questions"
+        message: "What is your email address?",
+        name: "email"
     }
 
 ];
-
-async function writeToFile(fileName, data){
-    await writeFileAsync(fileName, data, function(error){
-        if(error){
-            return console.log(error)
-        }
-
-        console.log("Success!!!");
-    })
-}
 
 function init(){
     inquirer
 
     .prompt(questions)
 
-    .then(async function (answers){
-        try{
-
-            // console.log(answers)
-            const userData = await api.getUser(answers.username);
-            // console.log(userData.data.data.user);
-            const data = Object.assign({}, answers, userData.data.data.user);
-
-            // console.log(data);
-            const markdownGenerate = generateMarkdown.generateMarkdown(data);
-
-            writeToFile("README.md", markdownGenerate);
-
-        }catch(error){
-            console.log(error);
-        }
-    });
-        
+    .then(function(response){
+        const url = `https://api.github.com/users/${response.username}`;
+        let answers = response
+    
+        axios.get(url).then(function(data){
+          let followers = data.data.followers;
+          let location = data.location;
+          let bioImg = data.data.avatar_url;
+          let readmeFile = generateMarkdown(answers, followers, location, bioImg)
+          fs.writeFile("README.md", readmeFile, function(error){
+              if(error){
+                  throw error;
+              }else{
+                  console.log("it worked!!")
+              }
+          })
+    })
+    })
 }
-
 init();

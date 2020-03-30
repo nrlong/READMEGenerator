@@ -1,52 +1,58 @@
-function generateMarkdown(data) {
-  return `
-# ${data.title}
+const fs = require("fs");
 
-![Github ALl Releases](http://img.shields.io/github/downloads/${data.username}/${data.title}/total)
+
+const readmeGenerate = (response, followers, location, bioImage) => {
+  return `# ${response.title}
+
+![followers](https://img.shields.io/badge/Followers-${followers}-brightgreen)
+![location](https://img.shields.io/badges/Location-${location}-blue)
 
 ## Description
 
-${data.description}
+${response.description}
 
 
 ## Table of Contents
 
-* [Description]{##Description}
-* [Installation]{##Installation}
-* [Useage]{##Useage}
-* [License]{##License}
-* [Contributors]{##Contributors}
-* [Tests]{##Tests}
-* [Questions]{##Questions}
+* [Description](##Description)
+* [Installation](##Installation)
+* [Useage](##Useage)
+* [License](##License)
+* [Contributors](##Contributors)
+* [Tests](##Tests)
+* [Questions](##Questions)
 
 ##Installation
 
-${data.install}
+${response.install}
 
 ##Useage
 
-${data.useage}
+${response.useage}
 
 ##License
 
-![Github license](https://image.shields.io/badge/license-${data.license}-blue.svg)
+${response.license}
 
 ##Contributors
 
-${data.contributors}
+${response.contributors}
 
 ##Tests
 
-${data.testing}
+${response.testing}
 
 ##Questions
 
-${data.questions}
+${response.questions}
 
-![User's Avatar](${data.avatarURL})
-${data.email}
+## Email
+${response.email};
+
+![bioImage] (${bioImage})
+
 
 `;
 }
 
-module.exports = generateMarkdown;
+module.exports = readmeGenerate;
