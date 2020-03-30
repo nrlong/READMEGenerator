@@ -7,13 +7,13 @@ a read me generator using node and npm packages inquirer and axios
 
 ## Table of Contents
 
-* [Description](##Description)
-* [Installation](##Installation)
-* [Useage](##Useage)
-* [License](##License)
-* [Contributors](##Contributors)
-* [Tests](##Tests)
-* [Email](##Email)
+* [Description](#Description)
+* [Installation](#Installation)
+* [Useage](#Useage)
+* [License](#License)
+* [Contributors](#Contributors)
+* [Tests](#Tests)
+* [Email](#Email)
 
 ## Installation
 

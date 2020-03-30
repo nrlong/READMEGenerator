@@ -8,13 +8,13 @@ ${response.description}
 
 ## Table of Contents
 
-* [Description](##Description)
-* [Installation](##Installation)
-* [Useage](##Useage)
-* [License](##License)
-* [Contributors](##Contributors)
-* [Tests](##Tests)
-* [Email](##Email)
+* [Description](#Description)
+* [Installation](#Installation)
+* [Useage](#Useage)
+* [License](#License)
+* [Contributors](#Contributors)
+* [Tests](#Tests)
+* [Email](#Email)
 
 ## Installation
 
@@ -42,7 +42,7 @@ ${response.description}
 
 ## Email
 
-    ${response.email};
+    ${response.email}
 
 ![bioImage](${bioImage}&s=200)
 
